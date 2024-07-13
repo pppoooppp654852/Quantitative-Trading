@@ -26,7 +26,7 @@ def mark_pivot_points(df, n):
         local_low_index = df[start:end]['Low'].idxmin()
         local_high_value = df.loc[local_high_index, 'High']
         local_low_value = df.loc[local_low_index, 'Low']
-
+        
         if prev_mark == 'HH' or prev_mark == 'LH' or prev_mark == 'N/A':
             if local_low_value < last_low_value:
                 df.at[local_low_index, 'PP'] = 'LL'
